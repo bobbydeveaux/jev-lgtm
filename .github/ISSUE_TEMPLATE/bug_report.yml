@@ -1,0 +1,28 @@
+name: Bug report
+description: Something in the action doesn't work as documented.
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What you expected, and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: workflow
+    attributes:
+      label: Workflow file
+      description: The jev-lgtm step from your workflow, with secrets removed.
+      render: yaml
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: The relevant part of the action's log output.
+      render: text
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      placeholder: v0.1.0

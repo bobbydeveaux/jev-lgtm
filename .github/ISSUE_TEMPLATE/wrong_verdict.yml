@@ -1,0 +1,28 @@
+name: Wrong verdict
+description: Jev gave LGTM to something that needed review, or flagged something harmless.
+labels: [verdict]
+body:
+  - type: markdown
+    attributes:
+      value: If the wrong LGTM came from a diff written to manipulate the reviewer, report it privately through SECURITY.md instead.
+  - type: dropdown
+    id: direction
+    attributes:
+      label: Which way was it wrong?
+      options:
+        - LGTM, but it needed review
+        - Review Advised, but it was harmless
+    validations:
+      required: true
+  - type: textarea
+    id: diff
+    attributes:
+      label: Diff or pull request link
+      description: A public pull request link, or a minimal diff that reproduces it.
+    validations:
+      required: true
+  - type: textarea
+    id: report
+    attributes:
+      label: Report
+      description: The jev-lgtm comment, including the risk scores and model version.

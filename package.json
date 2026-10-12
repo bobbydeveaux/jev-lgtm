@@ -1,0 +1,47 @@
+{
+  "name": "jev-lgtm",
+  "version": "0.1.0",
+  "description": "A GitHub Action that asks Jev (TypeSafe AI) whether a pull request is LGTM or needs a human review.",
+  "scripts": {
+    "build": "esbuild src/main.ts --bundle --platform=node --target=node24 --format=esm --outfile=dist/index.mjs --legal-comments=none --banner:js=\"import { createRequire } from \\\"node:module\\\"; const require = createRequire(import.meta.url);\"",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "all": "npm run typecheck && npm test && npm run build",
+    "try": "esbuild scripts/try.ts --bundle --platform=node --target=node24 --format=esm --outfile=node_modules/.cache/jev-lgtm/try.mjs --log-level=warning --banner:js=\"import { createRequire } from \\\"node:module\\\"; const require = createRequire(import.meta.url);\" && node node_modules/.cache/jev-lgtm/try.mjs"
+  },
+  "keywords": [
+    "github-action",
+    "code-review",
+    "jev",
+    "typesafe",
+    "lgtm"
+  ],
+  "author": "Bobby DeVeaux",
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "@actions/core": "^3.0.1",
+    "@actions/github": "^9.1.1",
+    "@typesafe-ai/sdk": "^0.6.0",
+    "picomatch": "^4.0.7"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "@types/picomatch": "^4.0.3",
+    "esbuild": "^0.28.2",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.4"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=24"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bobbydeveaux/jev-lgtm.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bobbydeveaux/jev-lgtm/issues"
+  },
+  "homepage": "https://github.com/bobbydeveaux/jev-lgtm#readme"
+}
