@@ -22,7 +22,7 @@
   "dependencies": {
     "@actions/core": "^3.0.1",
     "@actions/github": "^9.1.1",
-    "@typesafe-ai/sdk": "^0.6.0",
+    "@typesafe-ai/sdk": "^0.7.0",
     "picomatch": "^4.0.7"
   },
   "devDependencies": {
@@ -30,7 +30,7 @@
     "@types/picomatch": "^4.0.3",
     "esbuild": "^0.28.2",
     "typescript": "^7.0.2",
-    "vitest": "^5.0.4"
+    "vitest": "^5.0.5"
   },
   "private": true,
   "engines": {
